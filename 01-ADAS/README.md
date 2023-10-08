@@ -1,0 +1,1 @@
+> Refer the detailed primer on 3D computer vision and machine learning on Kaggle @ https://www.kaggle.com/discussions/getting-started/426952#2372799
