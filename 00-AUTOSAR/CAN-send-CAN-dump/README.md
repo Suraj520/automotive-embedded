@@ -14,6 +14,8 @@ Reference - https://sgframework.readthedocs.io/en/latest/cantutorial.html
 
 #### Example script
 
+1. CAN send and CAN dump
+
 > Sending via can0
 
 ```python can_simulator.py cansend can0 123 11 22 33 44 55 66 77 88```
@@ -21,5 +23,15 @@ Reference - https://sgframework.readthedocs.io/en/latest/cantutorial.html
 > Recieving via can0
 
 ```python can_simulator.py candump can0```
+
+2. Dealing with CAN databases - DBCs, ARXML etc.
+
+>  Sending dbc messages 
+
+```python can_dbc.py```
+
+> Recieving messages
+
+```candump vcan0 | cantools decode```
 
 
