@@ -1,0 +1,9 @@
+VERSION "1.0"
+
+BU_: MainControl
+BO_ 1 MainControlStatus: 8 MainControl
+ SG_ MainControlState : 0|1@1+ (1,0) [0|1] "Main Control State" MainControl : 0 "Off" 1 "On";
+
+BU_: Doors
+BO_ 2 DoorStatus: 8 Doors
+ SG_ DoorState : 0|1@1+ (1,0) [0|1] "Door State" Doors : 0 "Close" 1 "Open";
