@@ -3,3 +3,4 @@ Logging message in online and offline mode can be done via CANalyzer and its mes
 
 
 Reference video - https://www.youtube.com/watch?v=SFDL4rB07nM
+
