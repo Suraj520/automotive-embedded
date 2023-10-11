@@ -33,8 +33,16 @@ NS_ :
 
 BS_:
 
-BU_:
+BU_: Doors MainControl
+VAL_TABLE_ door_control_state 1 "closed" 0 "open" ;
+VAL_TABLE_ main_control_state 1 "On" 0 "Off" ;
 
+
+BO_ 512 DoorsMessage: 1 Doors
+ SG_ DoorsState : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 256 MainControlMessage: 1 MainControl
+ SG_ MainControlState : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
 
 
@@ -42,4 +50,6 @@ BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
 BA_DEF_  "BusType" STRING ;
 BA_DEF_DEF_  "MultiplexExtEnabled" "No";
 BA_DEF_DEF_  "BusType" "CAN";
+VAL_ 512 DoorsState 1 "closed" 0 "open" ;
+VAL_ 256 MainControlState 1 "On" 0 "Off" ;
 
