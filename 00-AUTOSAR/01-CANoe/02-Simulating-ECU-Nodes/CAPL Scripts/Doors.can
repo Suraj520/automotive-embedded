@@ -12,7 +12,7 @@ on start
   write("Doors ECU: Initialized with DoorsState = Open");
 }
 
-on message DoorsMessage msg
+on message DoorsMessage
 {
   // React to changes in the Doors state
   if (msg.DoorsState == 1)
@@ -28,3 +28,4 @@ on message DoorsMessage msg
     write("Doors ECU: Doors are now in the Open state");
   }
 }
+

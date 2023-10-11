@@ -1,29 +1,30 @@
 /*@!Encoding:1252*/
 variables
 {
-  msTimer Timer; // Create a timer for simulating periodic behavior
-  message MainControlMessage; // Reference to the Main Control message
-  byte MainControlState = 0; // Initial state: Off (0)
+  message MainControlMessage msg;  // Define the message variable
 }
 
 on start
 {
-  MainControlMessage = MainControlMessage; // Initialize the message reference
-  setTimer(msTimer, 1000); // Start a timer with a 1-second interval
+  // Initialization code for the Main Control ECU
+  msg.MainControlState = 0;  // Set the initial state to "Off"
+  output(msg);  // Send the initial state message
+  write("Main Control ECU: Initialized with MainControlState = Off");
 }
 
-on timer msTimer
+on message MainControlMessage
 {
-  if (MainControlState == 0) // If Main Control is Off
+  // React to changes in the Main Control state
+  if (msg.MainControlState == 1)
   {
-    MainControlState = 1; // Turn Main Control On
+    // Main Control is in the "On" state, perform relevant actions
+    // You can add your logic here
+    write("Main Control ECU: Main Control is now in the On state");
   }
   else
   {
-    MainControlState = 0; // Turn Main Control Off
+    // Main Control is in the "Off" state, perform relevant actions
+    // You can add your logic here
+    write("Main Control ECU: Main Control is now in the Off state");
   }
-
-  // Send the updated state in the Main Control message
-  MainControlMessage.MainControlState = MainControlState;
-  output(MainControlMessage);
 }
