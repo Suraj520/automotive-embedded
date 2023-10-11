@@ -1,7 +1,5 @@
-/*@!Encoding:1252*/
 variables
 {
-  msTimer Timer; // Create a timer for simulating periodic behavior
   message MainControlMessage; // Reference to the Main Control message
   byte MainControlState = 0; // Initial state: Off (0)
 }
@@ -9,18 +7,22 @@ variables
 on start
 {
   MainControlMessage = MainControlMessage; // Initialize the message reference
-  setTimer(msTimer, 1000); // Start a timer with a 1-second interval
+  // Initialize the timer and disable it
+  setTimer(msTimer, 1000);
+  disableTimer(msTimer);
 }
 
-on timer msTimer
+on key MainControl_onoff // This event will trigger when the "MainControl_onoff" button is pressed or released
 {
   if (MainControlState == 0) // If Main Control is Off
   {
     MainControlState = 1; // Turn Main Control On
+    write("Main Control is now On");
   }
   else
   {
     MainControlState = 0; // Turn Main Control Off
+    write("Main Control is now Off");
   }
 
   // Send the updated state in the Main Control message

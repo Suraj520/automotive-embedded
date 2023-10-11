@@ -18,14 +18,26 @@ on message DoorsMessage
   if (msg.DoorsState == 1)
   {
     // Doors are in the "Closed" state, perform relevant actions
-    // You can add your logic here
     write("Doors ECU: Doors are now in the Closed state");
   }
   else
   {
     // Doors are in the "Open" state, perform relevant actions
-    // You can add your logic here
     write("Doors ECU: Doors are now in the Open state");
   }
 }
 
+on key Button_Door_onoff // This event will trigger when the "Door_onoff" button is pressed or released
+{
+  if (msg.DoorsState == 0) // If Doors are Open
+  {
+    msg.DoorsState = 1; // Close the Doors
+    write("Doors ECU: Doors are now closed");
+  }
+  else
+  {
+    msg.DoorsState = 0; // Open the Doors
+    write("Doors ECU: Doors are now open");
+  }
+  output(msg); // Send the updated state message
+}
