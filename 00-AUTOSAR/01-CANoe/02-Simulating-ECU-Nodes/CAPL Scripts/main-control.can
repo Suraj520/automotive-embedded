@@ -1,0 +1,29 @@
+/*@!Encoding:1252*/
+variables
+{
+  msTimer Timer; // Create a timer for simulating periodic behavior
+  message MainControlMessage; // Reference to the Main Control message
+  byte MainControlState = 0; // Initial state: Off (0)
+}
+
+on start
+{
+  MainControlMessage = MainControlMessage; // Initialize the message reference
+  setTimer(msTimer, 1000); // Start a timer with a 1-second interval
+}
+
+on timer msTimer
+{
+  if (MainControlState == 0) // If Main Control is Off
+  {
+    MainControlState = 1; // Turn Main Control On
+  }
+  else
+  {
+    MainControlState = 0; // Turn Main Control Off
+  }
+
+  // Send the updated state in the Main Control message
+  MainControlMessage.MainControlState = MainControlState;
+  output(MainControlMessage);
+}

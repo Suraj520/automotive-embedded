@@ -1,0 +1,30 @@
+/*@!Encoding:1252*/
+variables
+{
+  message DoorsMessage msg;  // Define the message variable
+}
+
+on start
+{
+  // Initialization code for the Doors ECU
+  msg.DoorsState = 0;  // Set the initial state to "Open"
+  output(msg);  // Send the initial state message
+  write("Doors ECU: Initialized with DoorsState = Open");
+}
+
+on message DoorsMessage msg
+{
+  // React to changes in the Doors state
+  if (msg.DoorsState == 1)
+  {
+    // Doors are in the "Closed" state, perform relevant actions
+    // You can add your logic here
+    write("Doors ECU: Doors are now in the Closed state");
+  }
+  else
+  {
+    // Doors are in the "Open" state, perform relevant actions
+    // You can add your logic here
+    write("Doors ECU: Doors are now in the Open state");
+  }
+}
