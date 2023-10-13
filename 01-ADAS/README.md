@@ -2,8 +2,8 @@
 
 #### Table of Contents
 
-00. Matlab basics
-01. Simulink basics
+00. Matlab 101-advanced
+01. Simulink 101-advanced
 02. Lane Keeping Assist(LKA)
 03. Adaptive Cruise Control(ACC)
 04. Collision Avoidance.
