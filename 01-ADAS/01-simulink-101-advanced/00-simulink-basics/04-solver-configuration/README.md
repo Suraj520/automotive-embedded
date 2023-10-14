@@ -1,1 +1,3 @@
-project to be uploaded soon !
+## About
+- In Simulink, a solver configuration is a set of parameters that determine how the simulation of a dynamic system model should be conducted. These parameters include the step size, error tolerance, and various numerical methods used to solve the differential equations that describe the behavior of the system. Choosing the right solver configuration is crucial to ensure that your simulation runs accurately and efficiently.
+- Press Ctrl+E to access solver configuration and set up simulink accordingly.
