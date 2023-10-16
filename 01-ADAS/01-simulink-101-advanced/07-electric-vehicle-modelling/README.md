@@ -1,1 +1,6 @@
-project to be uploaded soon !
+#### About
+
+- Project in progress.
+- Command to execute a template EV project.
+```>> autoblkEvStart %simulate in matlab
+```
